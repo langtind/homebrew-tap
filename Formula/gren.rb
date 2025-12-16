@@ -1,15 +1,15 @@
 class Gren < Formula
   desc "Beautiful terminal UI for managing Git worktrees"
   homepage "https://github.com/langtind/gren"
-  version "0.3.0"
+  version "0.4.0"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/langtind/gren/releases/download/v#{version}/gren-v#{version}-darwin-arm64.tar.gz"
-      sha256 "1542f300f6ece30d181a74870c863035ef798c6f88f3d19eda72395990b954ee"
+      sha256 "1a180c6f82780f15eafb96d4379c79be34d8f7531a1a7199413d303064634890"
     else
       url "https://github.com/langtind/gren/releases/download/v#{version}/gren-v#{version}-darwin-amd64.tar.gz"
-      sha256 "1045aba1c00ce0e32dd6910ecfd005c80043a5d81ad30d682596abc6dd80da47"
+      sha256 "17f54871ab703badc0bc604e04f8aa9aef56f9a65b194486ed7af5b4e538894c"
     end
   end
 
