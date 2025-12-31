@@ -3,6 +3,12 @@ class Gren < Formula
   homepage "https://github.com/langtind/gren"
   version "0.5.0"
 
+  head "https://github.com/langtind/gren.git", branch: "main"
+
+  head do
+    depends_on "go" => :build
+  end
+
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/langtind/gren/releases/download/v#{version}/gren-v#{version}-darwin-arm64.tar.gz"
@@ -14,7 +20,15 @@ class Gren < Formula
   end
 
   def install
-    if Hardware::CPU.arm?
+    if build.head?
+      ldflags = %W[
+        -s -w
+        -X main.version=HEAD
+        -X main.commit=#{Utils.git_short_head}
+        -X main.date=#{time.iso8601}
+      ]
+      system "go", "build", *std_go_args(ldflags:)
+    elsif Hardware::CPU.arm?
       bin.install "gren-v#{version}-darwin-arm64" => "gren"
     else
       bin.install "gren-v#{version}-darwin-amd64" => "gren"
