@@ -1,7 +1,7 @@
 class Lunch < Formula
   desc "CLI for Agens lunch ordering system"
   homepage "https://github.com/agensdev/lunsjbot-cli"
-  version "0.1.0"
+  version "0.2.0"
 
   head "https://github.com/agensdev/lunsjbot-cli.git", branch: "main"
 
@@ -12,20 +12,20 @@ class Lunch < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/agensdev/lunsjbot-cli/releases/download/v#{version}/lunch-v#{version}-darwin-arm64.tar.gz"
-      sha256 "5ef1d30dbdb496195622c62eb4b646bf2c48e811f665e883cc015dce4fd1387e"
+      sha256 "7ddbe2ede510dd9bcd477d5d0d95ae402d12a9092e93b88560606e2443acb8c6"
     else
       url "https://github.com/agensdev/lunsjbot-cli/releases/download/v#{version}/lunch-v#{version}-darwin-amd64.tar.gz"
-      sha256 "f92329f9210e91d8088e0b7828a474a403ed39a66f3ba26722a6cf80815670e1"
+      sha256 "56c6acd514f62329775495a25481a60b9e604bfaa741aa20e5f888f270cfa794"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/agensdev/lunsjbot-cli/releases/download/v#{version}/lunch-v#{version}-linux-arm64.tar.gz"
-      sha256 "ad7c5d466a318cb362cdfe8de0070a0f8a313243cc743a351e64b053eacbff03"
+      sha256 "55baada99f348113c466646f4a911bf2c95f894e5de11161e6525dd2377b013f"
     else
       url "https://github.com/agensdev/lunsjbot-cli/releases/download/v#{version}/lunch-v#{version}-linux-amd64.tar.gz"
-      sha256 "168dff4e3a3dd14651f7400fd9e6d4b7621dc6058ce10cabb53f9d7f25cf3d0d"
+      sha256 "742203e73e910a81f49c541e2ea614684623602cdcc436470f6d3ba9244afed6"
     end
   end
 
