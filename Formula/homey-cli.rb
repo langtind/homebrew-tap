@@ -5,20 +5,20 @@
 class HomeyCli < Formula
   desc "CLI for controlling Homey smart home"
   homepage "https://github.com/langtind/homey-cli"
-  version "0.1.9"
+  version "0.1.10"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/langtind/homey-cli/releases/download/v0.1.9/homey-cli_0.1.9_darwin_amd64.tar.gz"
-      sha256 "d7115965081ed19c5d65486602d4a3afff6133d69ebb81d2875aa09a5e72f07a"
+      url "https://github.com/langtind/homey-cli/releases/download/v0.1.10/homey-cli_0.1.10_darwin_amd64.tar.gz"
+      sha256 "9a5252def4397aef614283af2a5c342f8882f55c58b5879f68321d0796922dba"
 
       def install
         bin.install "homey"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/langtind/homey-cli/releases/download/v0.1.9/homey-cli_0.1.9_darwin_arm64.tar.gz"
-      sha256 "264162e28f42d822ab0c292476933643be5cba39c5bf7c4656309b3af1a482a7"
+      url "https://github.com/langtind/homey-cli/releases/download/v0.1.10/homey-cli_0.1.10_darwin_arm64.tar.gz"
+      sha256 "417833329e4ac66ffc7da70a71155bc8bf2901300e949e1540be2ecb8b701304"
 
       def install
         bin.install "homey"
@@ -28,15 +28,15 @@ class HomeyCli < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/langtind/homey-cli/releases/download/v0.1.9/homey-cli_0.1.9_linux_amd64.tar.gz"
-      sha256 "8eee6ca686c04a521e97635ebab3b4c2a4b101300c8a01d82cdcb9c8ee2510d5"
+      url "https://github.com/langtind/homey-cli/releases/download/v0.1.10/homey-cli_0.1.10_linux_amd64.tar.gz"
+      sha256 "a85adbedd8e1e7ebd9e59b28140f038f423cfb0dcf3841727ffec968cab502fd"
       def install
         bin.install "homey"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/langtind/homey-cli/releases/download/v0.1.9/homey-cli_0.1.9_linux_arm64.tar.gz"
-      sha256 "4f0802866281f960d1cafb6394003da07dfbe1185bd3f9d957b1e86b2c40257f"
+      url "https://github.com/langtind/homey-cli/releases/download/v0.1.10/homey-cli_0.1.10_linux_arm64.tar.gz"
+      sha256 "af594a31f505cbd4559bdedcf377e49fcee56f6c5acf0cf9488bc58b2ddec261"
       def install
         bin.install "homey"
       end
