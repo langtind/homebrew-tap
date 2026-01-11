@@ -5,20 +5,20 @@
 class Gitgame < Formula
   desc "Gamify your GitHub productivity - compete with yourself or others"
   homepage "https://github.com/langtind/gitgame"
-  version "0.1.0"
+  version "0.2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/langtind/gitgame/releases/download/v0.1.0/gitgame_0.1.0_darwin_amd64.tar.gz"
-      sha256 "e6e244eddf540090a8f89ac7a80d7ab962fbeabb0e4284d56d0f9060272561e3"
+      url "https://github.com/langtind/gitgame/releases/download/v0.2.0/gitgame_0.2.0_darwin_amd64.tar.gz"
+      sha256 "8d2388d5c907ab7846a8b3d9d8a5e3d0a6aa35a6ea34ced7f9ca482600e7cb31"
 
       def install
         bin.install "gitgame"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/langtind/gitgame/releases/download/v0.1.0/gitgame_0.1.0_darwin_arm64.tar.gz"
-      sha256 "4b793f3904fb1d59cdd4cd2967569f6cd82671f2f6b3f92d81d91430c45b9525"
+      url "https://github.com/langtind/gitgame/releases/download/v0.2.0/gitgame_0.2.0_darwin_arm64.tar.gz"
+      sha256 "3a0d9dc28c0e8bf888e48c6909c76b3bbca0af8df7d6f723c72d8f83aeb5c442"
 
       def install
         bin.install "gitgame"
@@ -28,15 +28,15 @@ class Gitgame < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/langtind/gitgame/releases/download/v0.1.0/gitgame_0.1.0_linux_amd64.tar.gz"
-      sha256 "8a63ec2fe1e073ddcdbe7dbabe2b391362bc328afa1884bf4537ae25c4b4473d"
+      url "https://github.com/langtind/gitgame/releases/download/v0.2.0/gitgame_0.2.0_linux_amd64.tar.gz"
+      sha256 "b943ad1ae11300477351687692d035e034814804707d20b0e78a39e50fd7fda1"
       def install
         bin.install "gitgame"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/langtind/gitgame/releases/download/v0.1.0/gitgame_0.1.0_linux_arm64.tar.gz"
-      sha256 "64e190ae51c8efe9e1f42a1ebc558674fb73ee2cd0637cb02f6477ec94c2f397"
+      url "https://github.com/langtind/gitgame/releases/download/v0.2.0/gitgame_0.2.0_linux_arm64.tar.gz"
+      sha256 "c25d17c14046dfcc8d6783ebbb785d16d34ecf878db1b6e132d1a1a70312a514"
       def install
         bin.install "gitgame"
       end
