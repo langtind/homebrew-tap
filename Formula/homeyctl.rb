@@ -5,20 +5,20 @@
 class Homeyctl < Formula
   desc "CLI for controlling Homey smart home"
   homepage "https://github.com/langtind/homeyctl"
-  version "1.0.0"
+  version "1.1.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/langtind/homeyctl/releases/download/v1.0.0/homeyctl_1.0.0_darwin_amd64.tar.gz"
-      sha256 "a83fad1357c7d1d57db5130f5b071f0485563d2653eee92bf61a2da00313ce30"
+      url "https://github.com/langtind/homeyctl/releases/download/v1.1.0/homeyctl_1.1.0_darwin_amd64.tar.gz"
+      sha256 "f1f6bb58c35649240c911d700cd3f2f6996d87f0c682e4c11b66194ba30cf26f"
 
       def install
         bin.install "homeyctl"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/langtind/homeyctl/releases/download/v1.0.0/homeyctl_1.0.0_darwin_arm64.tar.gz"
-      sha256 "a1021cc7a00b5e7b7db0cb5e9620b3f82f2c5b3a0c4d2b664051fcc60c8d9a8d"
+      url "https://github.com/langtind/homeyctl/releases/download/v1.1.0/homeyctl_1.1.0_darwin_arm64.tar.gz"
+      sha256 "fa765fc390c5c2fb1ff6af2ddc9ea9c9bcd1acc0df45f9b54ba893010de8fb15"
 
       def install
         bin.install "homeyctl"
@@ -28,15 +28,15 @@ class Homeyctl < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/langtind/homeyctl/releases/download/v1.0.0/homeyctl_1.0.0_linux_amd64.tar.gz"
-      sha256 "ce7605c6aeaef9ee442935ee10227f6daf3d4bd1fa4ae99a71ed12334eda6ae9"
+      url "https://github.com/langtind/homeyctl/releases/download/v1.1.0/homeyctl_1.1.0_linux_amd64.tar.gz"
+      sha256 "f15616d3fb93ead60860a0d0b87496d420f0323cbed1057e53b4d5010f563600"
       def install
         bin.install "homeyctl"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/langtind/homeyctl/releases/download/v1.0.0/homeyctl_1.0.0_linux_arm64.tar.gz"
-      sha256 "44f3603abddae026695c44ecd0b8a40f7b9f0be00267946d2faaeb9d299bdf06"
+      url "https://github.com/langtind/homeyctl/releases/download/v1.1.0/homeyctl_1.1.0_linux_arm64.tar.gz"
+      sha256 "8afff32a0c74bcb751c6978be73edbca96b20fb0a91d52b582bc5a3d817ac139"
       def install
         bin.install "homeyctl"
       end
