@@ -5,21 +5,21 @@
 class Ynabctl < Formula
   desc "A CLI tool for interacting with the YNAB API"
   homepage "https://github.com/langtind/ynabctl"
-  version "0.1.1"
+  version "0.1.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/langtind/ynabctl/releases/download/v0.1.1/ynabctl_Darwin_x86_64.tar.gz"
-      sha256 "78223ee9f45bd5af37c848af5b9de9b9b93e381b96392998942e2df4e0a08d0b"
+      url "https://github.com/langtind/ynabctl/releases/download/v0.1.2/ynabctl_Darwin_x86_64.tar.gz"
+      sha256 "569fda06f80796aea0854d74a54ce76b885380fbcb3d28d4df50505ce95b2d88"
 
       def install
         bin.install "ynabctl"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/langtind/ynabctl/releases/download/v0.1.1/ynabctl_Darwin_arm64.tar.gz"
-      sha256 "66f0b7ac49618f7e6ef42ffe57d6e7f1f079f5a5fb9fa221bb000d6da97212bd"
+      url "https://github.com/langtind/ynabctl/releases/download/v0.1.2/ynabctl_Darwin_arm64.tar.gz"
+      sha256 "7c88ff62ce97210a4fd8dc958d2a5461cfe06b298433cb64fe8d32770a81bb4a"
 
       def install
         bin.install "ynabctl"
@@ -29,15 +29,15 @@ class Ynabctl < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/langtind/ynabctl/releases/download/v0.1.1/ynabctl_Linux_x86_64.tar.gz"
-      sha256 "0f3887027bfc378a7d7c73a0022035c00d83fe9034a08ecef3cf0e38c8d4208c"
+      url "https://github.com/langtind/ynabctl/releases/download/v0.1.2/ynabctl_Linux_x86_64.tar.gz"
+      sha256 "4c3ca1a91e1d8f4502be8f54a4bf10d44f3113236dc687ba826233ef4ec04a54"
       def install
         bin.install "ynabctl"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/langtind/ynabctl/releases/download/v0.1.1/ynabctl_Linux_arm64.tar.gz"
-      sha256 "54baafbd33dcf4fccf983292fa20c63edca1a12fec08818430aa2816e459aec9"
+      url "https://github.com/langtind/ynabctl/releases/download/v0.1.2/ynabctl_Linux_arm64.tar.gz"
+      sha256 "13e5a8342b8fa65f7f5c3c2f059ddadb4f91836348a7c08ab2c4eea3cbdc4637"
       def install
         bin.install "ynabctl"
       end
