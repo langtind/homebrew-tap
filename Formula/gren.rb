@@ -5,53 +5,132 @@
 class Gren < Formula
   desc "Git worktree manager with TUI and CLI"
   homepage "https://github.com/langtind/gren"
-  version "0.6.2"
+  version "0.7.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/langtind/gren/releases/download/v0.6.2/gren_0.6.2_darwin_amd64.tar.gz"
-      sha256 "4447a47bbee7b2410a758210f132eb2d1279577e61379c0941596c0fce57173f"
+      url "https://github.com/langtind/gren/releases/download/v0.7.0/gren_0.7.0_darwin_amd64.tar.gz"
+      sha256 "374a8a11fba8cb0457b4361b9f99b979b829834f0cb66c02457807a4f6055fbc"
 
       def install
-        bin.install "gren"
+        if build.head?
+          ldflags = %W[
+            -s -w
+            -X main.version=HEAD-#{Utils.git_short_head}
+            -X main.commit=#{Utils.git_short_head}
+            -X main.date=#{time.iso8601}
+          ]
+          system "go", "build", *std_go_args(ldflags:)
+        else
+          bin.install "gren"
+        end
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/langtind/gren/releases/download/v0.6.2/gren_0.6.2_darwin_arm64.tar.gz"
-      sha256 "234e4c65c02de17342809cb7e94d56c0d191169eae94f2fc95357b61f6a277b5"
+      url "https://github.com/langtind/gren/releases/download/v0.7.0/gren_0.7.0_darwin_arm64.tar.gz"
+      sha256 "9424ac341238c39f48cd9e63e0090de22cdfde90b124d7325ea103ea6a17c746"
 
       def install
-        bin.install "gren"
+        if build.head?
+          ldflags = %W[
+            -s -w
+            -X main.version=HEAD-#{Utils.git_short_head}
+            -X main.commit=#{Utils.git_short_head}
+            -X main.date=#{time.iso8601}
+          ]
+          system "go", "build", *std_go_args(ldflags:)
+        else
+          bin.install "gren"
+        end
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/langtind/gren/releases/download/v0.6.2/gren_0.6.2_linux_amd64.tar.gz"
-      sha256 "4f64f8ea79f22a9e73ab0e589fbd3a60f9ac6a9932758f114bed72f37d413394"
+      url "https://github.com/langtind/gren/releases/download/v0.7.0/gren_0.7.0_linux_amd64.tar.gz"
+      sha256 "200bec50361db9f63270bbb94267ab75928d81099d9c6dbea991570855f9f049"
       def install
-        bin.install "gren"
+        if build.head?
+          ldflags = %W[
+            -s -w
+            -X main.version=HEAD-#{Utils.git_short_head}
+            -X main.commit=#{Utils.git_short_head}
+            -X main.date=#{time.iso8601}
+          ]
+          system "go", "build", *std_go_args(ldflags:)
+        else
+          bin.install "gren"
+        end
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/langtind/gren/releases/download/v0.6.2/gren_0.6.2_linux_arm.tar.gz"
-      sha256 "e76f3f1ea15b331c6b522a0db76e73d7f201da88d180f577f7c082e6d510071c"
+      url "https://github.com/langtind/gren/releases/download/v0.7.0/gren_0.7.0_linux_arm.tar.gz"
+      sha256 "c37ebe7a7248e97beb8142082482b9c1810e0beca25edf8ff9215dca3e702d9a"
       def install
-        bin.install "gren"
+        if build.head?
+          ldflags = %W[
+            -s -w
+            -X main.version=HEAD-#{Utils.git_short_head}
+            -X main.commit=#{Utils.git_short_head}
+            -X main.date=#{time.iso8601}
+          ]
+          system "go", "build", *std_go_args(ldflags:)
+        else
+          bin.install "gren"
+        end
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/langtind/gren/releases/download/v0.6.2/gren_0.6.2_linux_arm64.tar.gz"
-      sha256 "393c1f03f5c69caf3d7780d12e56fb8650222ac4d0c0e4e1e4a2792c25036fae"
+      url "https://github.com/langtind/gren/releases/download/v0.7.0/gren_0.7.0_linux_arm64.tar.gz"
+      sha256 "c0701e6914b8115cdaf82164519f8895982fe3e37cce2e6d559bcce7353f5dfe"
       def install
-        bin.install "gren"
+        if build.head?
+          ldflags = %W[
+            -s -w
+            -X main.version=HEAD-#{Utils.git_short_head}
+            -X main.commit=#{Utils.git_short_head}
+            -X main.date=#{time.iso8601}
+          ]
+          system "go", "build", *std_go_args(ldflags:)
+        else
+          bin.install "gren"
+        end
       end
     end
   end
 
+  head "https://github.com/langtind/gren.git", branch: "main"
+
+  head do
+    depends_on "go" => :build
+  end
+
+  def caveats
+    <<~EOS
+      Navigation functionality requires shell integration.
+
+      Add one of these lines to your shell config:
+
+        # Zsh (~/.zshrc):
+        eval "$(gren shell-init zsh)"
+
+        # Bash (~/.bashrc):
+        eval "$(gren shell-init bash)"
+
+        # Fish (~/.config/fish/config.fish):
+        gren shell-init fish | source
+
+      This enables:
+        - 'g' key in TUI to navigate to worktree folder
+        - 'gcd <name>' alias for quick navigation
+        - 'gren navigate <name>' command
+    EOS
+  end
+
   test do
-    system "#{bin}/gren", "--version"
+    assert_match "gren version", shell_output("#{bin}/gren --version")
+    assert_match "gren()", shell_output("#{bin}/gren shell-init zsh")
   end
 end
