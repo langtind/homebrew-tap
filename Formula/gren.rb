@@ -11,7 +11,7 @@ class Gren < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/langtind/gren/releases/download/v0.7.1/gren_0.7.1_darwin_amd64.tar.gz"
-      sha256 "37710ecb750e07c6742370c2e1a2d095c8e148380e99d4d9f6f33ccb837b9c14"
+      sha256 "60cf78a6d0d15879aaf5bd08e34cd5711fd91fa36d7a9caf36b5b3d6bdd9dc33"
 
       def install
         if build.head?
@@ -29,7 +29,7 @@ class Gren < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/langtind/gren/releases/download/v0.7.1/gren_0.7.1_darwin_arm64.tar.gz"
-      sha256 "643e383e8a90fa70bc18cecbf95ce8f0278de65b58455f4e216620ea6f24730e"
+      sha256 "686ed2117c1ac1770135c640a755379436ab3d578bcc8ac85aa9a4e4795a7e23"
 
       def install
         if build.head?
@@ -50,7 +50,7 @@ class Gren < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/langtind/gren/releases/download/v0.7.1/gren_0.7.1_linux_amd64.tar.gz"
-      sha256 "ede762dc2a3871fcca82df18f31fe48d4e82f5baa8378ea3b1838e5e43047840"
+      sha256 "b8148ad88ba4a7fc622fdc5abe1a67dd226ea00204ad3a2655bf5e41c02d7311"
       def install
         if build.head?
           ldflags = %W[
@@ -67,7 +67,7 @@ class Gren < Formula
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
       url "https://github.com/langtind/gren/releases/download/v0.7.1/gren_0.7.1_linux_arm.tar.gz"
-      sha256 "4349fbfa4eac8635c14be051cecf71f4e26db51040ac37f8a47a865d4db2d1e0"
+      sha256 "681e53393cc8dffc4c42571eef66ec0a6d2d12760e21e44507864d29b735cfed"
       def install
         if build.head?
           ldflags = %W[
@@ -84,7 +84,7 @@ class Gren < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/langtind/gren/releases/download/v0.7.1/gren_0.7.1_linux_arm64.tar.gz"
-      sha256 "d1dffc42f1ff4382fa2df79f7304d5571118f7f0c91cd72f3886b711dfeaa7b4"
+      sha256 "950077bee1dd52b4fcae31403a882e25e3b87b4b7c352dca1636db30b609be90"
       def install
         if build.head?
           ldflags = %W[
