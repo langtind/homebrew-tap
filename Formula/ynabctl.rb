@@ -5,21 +5,21 @@
 class Ynabctl < Formula
   desc "A CLI tool for interacting with the YNAB API"
   homepage "https://github.com/langtind/ynabctl"
-  version "0.2.0"
+  version "0.2.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/langtind/ynabctl/releases/download/v0.2.0/ynabctl_Darwin_x86_64.tar.gz"
-      sha256 "befa7446ea1b2ecba136d58ea2d3b149e539cd197c1c1b633e5abffeb79ae02c"
+      url "https://github.com/langtind/ynabctl/releases/download/v0.2.1/ynabctl_Darwin_x86_64.tar.gz"
+      sha256 "b967089d34fa980819f32e344556a6febe466ef2b9ead4e0e8e94ee81c7b4454"
 
       define_method(:install) do
         bin.install "ynabctl"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/langtind/ynabctl/releases/download/v0.2.0/ynabctl_Darwin_arm64.tar.gz"
-      sha256 "860baf8923795543cebbbe4ff831cfe89d4911ecc097d29aa1ec510e4f3198b3"
+      url "https://github.com/langtind/ynabctl/releases/download/v0.2.1/ynabctl_Darwin_arm64.tar.gz"
+      sha256 "ec4175b6ed93b11050a3a03b2ba998b553231e4f11fce99f77043f9460eac4dc"
 
       define_method(:install) do
         bin.install "ynabctl"
@@ -29,15 +29,15 @@ class Ynabctl < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/langtind/ynabctl/releases/download/v0.2.0/ynabctl_Linux_x86_64.tar.gz"
-      sha256 "3e70c71fa373d5cfc98ef922771702f2d3a89810601e6fc449b32de326df00e1"
+      url "https://github.com/langtind/ynabctl/releases/download/v0.2.1/ynabctl_Linux_x86_64.tar.gz"
+      sha256 "c12132b3eab6a6ddffbe49753ea40fd163f97ad4a7b5e18a80cc4b4e2ace123b"
       define_method(:install) do
         bin.install "ynabctl"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/langtind/ynabctl/releases/download/v0.2.0/ynabctl_Linux_arm64.tar.gz"
-      sha256 "74ae2eb991dbf62dd6eec90098f9e4108352ae277b2a0ba3ca2542d181834894"
+      url "https://github.com/langtind/ynabctl/releases/download/v0.2.1/ynabctl_Linux_arm64.tar.gz"
+      sha256 "4f2611f1372c237f8d7e6004f2414b9225d8165871e3a100b28d47940522559c"
       define_method(:install) do
         bin.install "ynabctl"
       end
