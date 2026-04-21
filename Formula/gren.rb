@@ -5,15 +5,15 @@
 class Gren < Formula
   desc "Git worktree manager with TUI and CLI"
   homepage "https://github.com/langtind/gren"
-  version "0.8.0"
+  version "0.9.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/langtind/gren/releases/download/v0.8.0/gren_0.8.0_darwin_amd64.tar.gz"
-      sha256 "2bcac86cfd6a132110077dc44cfdc2755bc9e12b6f08538533894ce23e5b1f03"
+      url "https://github.com/langtind/gren/releases/download/v0.9.0/gren_0.9.0_darwin_amd64.tar.gz"
+      sha256 "9e4b03ac848b67294ada92722994c6dde55bc869358246563441676eb0da06d9"
 
-      def install
+      define_method(:install) do
         if build.head?
           ldflags = %W[
             -s -w
@@ -28,10 +28,10 @@ class Gren < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/langtind/gren/releases/download/v0.8.0/gren_0.8.0_darwin_arm64.tar.gz"
-      sha256 "99d2211e1124fdd87c2719aca7c4be83f78544cff1fc2a2c329e1bb4c2ecd7dd"
+      url "https://github.com/langtind/gren/releases/download/v0.9.0/gren_0.9.0_darwin_arm64.tar.gz"
+      sha256 "14b6d2137e663da52e5f0c01d54c684aa0d8cc3f5abccebda391a293a80eef07"
 
-      def install
+      define_method(:install) do
         if build.head?
           ldflags = %W[
             -s -w
@@ -49,9 +49,9 @@ class Gren < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/langtind/gren/releases/download/v0.8.0/gren_0.8.0_linux_amd64.tar.gz"
-      sha256 "7303989b8180be87913722533e0913005c0023b90120e202ce42ad57d20385dd"
-      def install
+      url "https://github.com/langtind/gren/releases/download/v0.9.0/gren_0.9.0_linux_amd64.tar.gz"
+      sha256 "129bfef39e3eeb9d7e91f6faffc1adff64e4660a67622e3ec8f08191963d0527"
+      define_method(:install) do
         if build.head?
           ldflags = %W[
             -s -w
@@ -66,9 +66,9 @@ class Gren < Formula
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/langtind/gren/releases/download/v0.8.0/gren_0.8.0_linux_arm.tar.gz"
-      sha256 "a3dfbfadc0e1fb8af91d30716d4f0d284a7c099d63f06f1073dbb071358d0642"
-      def install
+      url "https://github.com/langtind/gren/releases/download/v0.9.0/gren_0.9.0_linux_arm.tar.gz"
+      sha256 "d4cebd38aa0cf5ee2743c34530721cf46a7f9525b7bfd20babcc4376418eb5c9"
+      define_method(:install) do
         if build.head?
           ldflags = %W[
             -s -w
@@ -83,9 +83,9 @@ class Gren < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/langtind/gren/releases/download/v0.8.0/gren_0.8.0_linux_arm64.tar.gz"
-      sha256 "36fe0ca395d7d3476613e624e5f277ee45b784a7e974d7622f03e856fbfe0d59"
-      def install
+      url "https://github.com/langtind/gren/releases/download/v0.9.0/gren_0.9.0_linux_arm64.tar.gz"
+      sha256 "ee8390f7315a11276189a56758dfe184af4c16baf4543762b50fb2c903fab616"
+      define_method(:install) do
         if build.head?
           ldflags = %W[
             -s -w
