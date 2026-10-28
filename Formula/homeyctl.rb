@@ -5,22 +5,22 @@
 class Homeyctl < Formula
   desc "CLI for controlling Homey smart home"
   homepage "https://github.com/langtind/homeyctl"
-  version "1.1.0"
+  version "1.1.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/langtind/homeyctl/releases/download/v1.1.0/homeyctl_1.1.0_darwin_amd64.tar.gz"
-      sha256 "f1f6bb58c35649240c911d700cd3f2f6996d87f0c682e4c11b66194ba30cf26f"
+      url "https://github.com/langtind/homeyctl/releases/download/v1.1.1/homeyctl_1.1.1_darwin_amd64.tar.gz"
+      sha256 "af0c3427200958f9d3903721ccf76b88a9b80e4dfc41268700b66ad4ba1a1a73"
 
-      def install
+      define_method(:install) do
         bin.install "homeyctl"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/langtind/homeyctl/releases/download/v1.1.0/homeyctl_1.1.0_darwin_arm64.tar.gz"
-      sha256 "fa765fc390c5c2fb1ff6af2ddc9ea9c9bcd1acc0df45f9b54ba893010de8fb15"
+      url "https://github.com/langtind/homeyctl/releases/download/v1.1.1/homeyctl_1.1.1_darwin_arm64.tar.gz"
+      sha256 "400ae923152cac0c857c66e107c5eab163d417f2d34a367155c361d32e4bd1d9"
 
-      def install
+      define_method(:install) do
         bin.install "homeyctl"
       end
     end
@@ -28,16 +28,16 @@ class Homeyctl < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/langtind/homeyctl/releases/download/v1.1.0/homeyctl_1.1.0_linux_amd64.tar.gz"
-      sha256 "f15616d3fb93ead60860a0d0b87496d420f0323cbed1057e53b4d5010f563600"
-      def install
+      url "https://github.com/langtind/homeyctl/releases/download/v1.1.1/homeyctl_1.1.1_linux_amd64.tar.gz"
+      sha256 "b657fbddaf503660641254535bccb5d739f8057bcb61e1d5b7adf547a5af4414"
+      define_method(:install) do
         bin.install "homeyctl"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/langtind/homeyctl/releases/download/v1.1.0/homeyctl_1.1.0_linux_arm64.tar.gz"
-      sha256 "8afff32a0c74bcb751c6978be73edbca96b20fb0a91d52b582bc5a3d817ac139"
-      def install
+      url "https://github.com/langtind/homeyctl/releases/download/v1.1.1/homeyctl_1.1.1_linux_arm64.tar.gz"
+      sha256 "7e3792b29b47a1e82ecfbc3a5c3dc766c5635dbe2dacd338b9b5e08280b5ac67"
+      define_method(:install) do
         bin.install "homeyctl"
       end
     end
